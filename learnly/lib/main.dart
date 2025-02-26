@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:learnly/home.dart';
 
 void main() {
   runApp(const AdvanceUI());
@@ -13,9 +14,8 @@ class AdvanceUI extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Advance UI"),
-          centerTitle: true,
-          backgroundColor: Colors.green,
+          backgroundColor: Colors.greenAccent,
+          title: Center(child: Text("Learning Lab 6")),
         ),
         drawer: Drawer(
           child: ListView(
@@ -71,18 +71,7 @@ class AdvanceUI extends StatelessWidget {
             ],
           ),
         ),
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              CachedNetworkImage(
-                imageUrl:
-                    "https://www.nbc.com/sites/nbcblog/files/styles/scale_600/public/2024/03/kung-fu-panda-4-1.jpg",
-                placeholder: (context, url) => CircularProgressIndicator(),
-                errorWidget: (context, url, error) => Icon(Icons.error),
-              ),
-            ],
-          ),
-        ),
+        body: Home(),
       ),
     );
   }
