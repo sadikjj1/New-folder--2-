@@ -21,18 +21,62 @@ class AdvanceUI extends StatelessWidget {
           child: ListView(
             children: [
               ListTile(
-                leading: Icon(Icons.lock_clock_outlined),
-                title: Text("recent"),
-              )
+                title: Text("Recent"),
+                leading: Icon(Icons.alarm),
+                onTap: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text("Hello World"),
+                    ),
+                  );
+                },
+              ),
+              ListTile(
+                title: Text("Image"),
+                leading: Icon(Icons.image),
+                onTap: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text("Hello Image "),
+                    ),
+                  );
+                },
+              ),
+              ListTile(
+                title: Text("Video"),
+                leading: Icon(Icons.movie),
+                onTap: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text("Hello Ripon Video"),
+                    ),
+                  );
+                },
+              ),
+              ListTile(
+                title: Text("Sd Card"),
+                leading: Icon(Icons.sd_card),
+                trailing: IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.eject),
+                ),
+                onTap: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text("Open SD-card"),
+                    ),
+                  );
+                },
+              ),
             ],
           ),
-          
         ),
         body: SingleChildScrollView(
           child: Column(
             children: [
               CachedNetworkImage(
-                imageUrl: "http://via.placeholder.com/350x150",
+                imageUrl:
+                    "https://www.nbc.com/sites/nbcblog/files/styles/scale_600/public/2024/03/kung-fu-panda-4-1.jpg",
                 placeholder: (context, url) => CircularProgressIndicator(),
                 errorWidget: (context, url, error) => Icon(Icons.error),
               ),
