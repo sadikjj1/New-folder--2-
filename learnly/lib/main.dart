@@ -109,7 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
               'You have pushed the button this many times:',
             ),
             const Text(
-              'this is sadik and this is my new commit:',
+              'this is sadik and this is my new commit__:',
             ),
             Text(
               '$_counter',
